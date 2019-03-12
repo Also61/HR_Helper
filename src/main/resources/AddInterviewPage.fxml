@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="769.0" prefWidth="1026.0" style="-fx-background-color: #98FB97;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddInterviewPageController">
+    <children>
+        <AnchorPane layoutY="84.0" prefHeight="685.0" prefWidth="1026.0" style="-fx-background-color: #FAFAFA;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="84.0">
+            <children>
+                <Button fx:id="loadInterview" layoutX="263.0" layoutY="588.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="500.0" style="-fx-background-color: F39C63;" text="Загрузить данные по собеседованию" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="263.0">
+                    <font>
+                        <Font name="Impact" size="27.0" />
+                    </font>
+                </Button>
+            <TextField fx:id="addInterPhone" layoutX="307.0" layoutY="49.0" prefHeight="52.0" prefWidth="413.0" promptText="Телефон кандидата" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="306.0" AnchorPane.topAnchor="49.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="addInterPosition" layoutX="307.0" layoutY="124.0" prefHeight="52.0" prefWidth="413.0" promptText="Предпочитаемая должность" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="306.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="addInterInterDate" layoutX="308.0" layoutY="201.0" prefHeight="52.0" prefWidth="413.0" promptText="Дата собеседования" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="306.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="addInterInterResult" layoutX="307.0" layoutY="271.0" prefHeight="52.0" prefWidth="413.0" promptText="Собеседование прошел/ не прошел" AnchorPane.leftAnchor="307.0" AnchorPane.rightAnchor="306.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </TextField>
+            <Label layoutX="228.0" layoutY="64.0" text="Телефон" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="728.0" AnchorPane.topAnchor="64.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="208.0" layoutY="139.0" prefHeight="22.0" prefWidth="90.0" text="Должность" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="728.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="216.0" text="Месяц собеседования" AnchorPane.leftAnchor="117.0" AnchorPane.rightAnchor="728.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="208.0" layoutY="286.0" prefHeight="22.0" prefWidth="90.0" text="Результат" AnchorPane.leftAnchor="208.0" AnchorPane.rightAnchor="728.0">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <Label layoutX="6.0" prefHeight="83.0" prefWidth="304.0" text="HR Helper" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="0.0">
+            <font>
+                <Font name="Impact" size="67.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
