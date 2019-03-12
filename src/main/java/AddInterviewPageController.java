@@ -2,6 +2,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 
 import java.net.URL;
@@ -32,7 +33,20 @@ public class AddInterviewPageController {
 
 
     @FXML
+    private ImageView AddInterInfoButton;
+
+
+    @FXML
     void initialize() {
+
+        AddInterInfoButton.setOnMouseClicked(event -> {
+                Alert info = new Alert(Alert.AlertType.INFORMATION);
+        info.setTitle("Внимение");  //warning box title
+        info.setHeaderText("Добавлять информацию по собеседованию можно только если кандидат прошел анкетирование.");
+        info.showAndWait();
+        }
+        );
+
         //Подключение к базе данных
 
         DataBaseHandler dbHandler = new DataBaseHandler();

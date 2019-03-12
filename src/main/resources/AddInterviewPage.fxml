@@ -67,5 +67,10 @@
                 <Font name="Impact" size="67.0" />
             </font>
         </Label>
+      <ImageView fx:id="AddInterInfoButton" fitHeight="83.0" fitWidth="127.0" layoutX="929.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="686.0" AnchorPane.leftAnchor="929.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@round-help-button.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

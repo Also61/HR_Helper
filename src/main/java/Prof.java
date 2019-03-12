@@ -68,8 +68,7 @@ public class Prof {
         return middleName;
     }
     public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
+        this.middleName = middleName;}
 
 
     public String getPosition(){
@@ -127,8 +126,7 @@ public class Prof {
     public String getExperience(){
         return experience;
     }
-    public void setExperience(String experience) {
-        this.experience = experience;
+    public void setExperience(String experience) {this.experience = experience;
     }
 
 
@@ -136,7 +134,5 @@ public class Prof {
     public  String getOther(){
         return other;
     }
-    public void setOther(String other) {
-        this.other = other;
-    }
+    public void setOther(String other) {this.other = other;}
 }

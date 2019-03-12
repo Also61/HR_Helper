@@ -20,6 +20,7 @@ public class Constant {
     //Константы хранящие информацию о таблице собеседований
     public static final String INTERVIEWS_TABLE = "interview";
 
+    public static final String INTERVIEWS_ID = "InterviewID";
     public static final String INTERVIEWS_PHONE = "Phone" ;
     public static final String INTERVIEWS_INTERMONTH = "InterMonth" ;
     public static final String INTERVIEWS_POSITION = "Position" ;
