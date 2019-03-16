@@ -1,27 +1,57 @@
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
-import java.io.IOException;
+
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Profiles {
 
+    // Метод выполняющий проверку валидности заполнения полей и вызывающий метод добавления в БД
+    public static void checkingBeforeAddingProfile(String phone, String secondName, String name, String middleName,
+                                     String position, String adress, String citizenship, String skills,
+                                     String education, String passport, String experience, String other)
+    {
+
+         phone = phone.trim();
+         passport = passport.trim();
+        if  (secondName.length() == 0 && phone.length() == 0 && name.length() == 0 && adress.length() == 0 && citizenship.length() == 0 &&
+                position.length() == 0 && passport.length() == 0 && education.length() == 0 && skills.length() == 0){
+            Alert fillFields = new Alert(Alert.AlertType.ERROR);
+            fillFields.setTitle("Ошибка!");  //warning box title
+            fillFields.setHeaderText("Заполните все обязательные поля!");
+            fillFields.showAndWait();
+        }
+
+        else if (passport.length() != 10) {
+            Alert wrongPassportLenght = new Alert(Alert.AlertType.ERROR);
+            wrongPassportLenght.setTitle("Ошибка!");  //warning box title
+            wrongPassportLenght.setHeaderText("В поле <<Паспорт>> должно быть введено 10 цифр (Серия и номер)");
+            wrongPassportLenght.showAndWait();
+
+        }
+
+        else if (phone.length() != 11) {
+            Alert wrongPhoneLenght = new Alert(Alert.AlertType.ERROR);
+            wrongPhoneLenght.setTitle("Ошибка!");  //warning box title
+            wrongPhoneLenght.setHeaderText("В поле <<Телефон>> должно быть введено 11 цифр номера (с 8ркой)");
+            wrongPhoneLenght.showAndWait();
+        }
+        else {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setHeaderText("Данные загружены");
+            a.showAndWait();
+
+            addingProfile(phone, secondName, name,
+                    middleName, position, adress,
+                    citizenship, skills, education,
+                    passport, experience, other);
+        }
+    }
 
 
     //Метод содержащий запрос на вставление данных в таблицу анкет
-    public static void addingProfile(Integer phone, String secondName, String name, String middleName,
+    public static void addingProfile(String phone, String secondName, String name, String middleName,
                                      String position, String adress, String citizenship, String skills,
-                                     String education, Integer passport, String experience, String other)
+                                     String education, String passport, String experience, String other)
     {
         String insert = "INSERT INTO " + Constant.PROFILES_TABLE + "(" + Constant.PROFILES_PHONE + ","
                 + Constant.PROFILES_SECONDNAME + "," + Constant.PROFILES_NAME + ","  + Constant.PROFILES_MIDDLENAME + ","
@@ -33,7 +63,7 @@ public class Profiles {
 
         try {
             PreparedStatement prSt = DataBaseHandler.getDbConnection().prepareStatement(insert);
-            prSt.setInt(1,phone);
+            prSt.setLong(1, Long.parseLong(phone));
             prSt.setString(2,secondName);
             prSt.setString(3,name);
             prSt.setString(4,middleName);
@@ -42,7 +72,7 @@ public class Profiles {
             prSt.setString(7,citizenship);
             prSt.setString(8,skills);
             prSt.setString(9,education);
-            prSt.setInt(10,passport);
+            prSt.setLong(10, Long.parseLong(passport));
             prSt.setString(11,experience);
             prSt.setString(12,other);
 

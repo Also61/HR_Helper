@@ -59,7 +59,7 @@
                                             <columns>
                                                 <TableColumn fx:id="IntID" minWidth="0.0" prefWidth="73.0" text="№" />
                                                 <TableColumn fx:id="intPhone" prefWidth="241.0" text="Телефон" />
-                                                <TableColumn fx:id="IntMonth" minWidth="0.0" prefWidth="200.0" text="Месяц" />
+                                                <TableColumn fx:id="InterMonth" minWidth="0.0" prefWidth="200.0" text="Месяц" />
                                                 <TableColumn fx:id="intPosition" minWidth="0.0" prefWidth="211.0" text="Должность" />
                                                 <TableColumn fx:id="intResult" minWidth="0.0" prefWidth="243.0" text="Результат" />
                                             </columns>

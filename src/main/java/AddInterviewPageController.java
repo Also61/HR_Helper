@@ -63,11 +63,12 @@ public class AddInterviewPageController {
                                 addInterPosition.getText(), addInterInterResult.getText());
                     } catch (Exception e) {
 
-                        Alert a = new Alert(Alert.AlertType.WARNING);
+                        Alert a = new Alert(Alert.AlertType.ERROR);
                         a.setTitle("Ошибка!");  //warning box title
-                        a.setHeaderText("Проверьте валидность введенных данных");
+                        a.setHeaderText("Полльзователь с данным номером не проходил анкетирования или заполнены не все поля");
                         a.showAndWait();
                     }
+
                 }
 
         );

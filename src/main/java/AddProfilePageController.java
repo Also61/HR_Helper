@@ -1,9 +1,11 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 
+import java.io.NotActiveException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -54,6 +56,7 @@ public class AddProfilePageController {
 
     @FXML
     private TextField addProflieSkills;
+    private ActionEvent event;
 
     @FXML
     void initialize() {
@@ -66,16 +69,16 @@ public class AddProfilePageController {
 
 
                 //Загрузка в БД данных анкеты
-                Profiles.addingProfile(Integer.parseInt(addProfliePhone.getText()), addProflieSecondName.getText(), addProflieFirstName.getText(),
+                Profiles.checkingBeforeAddingProfile(addProfliePhone.getText(), addProflieSecondName.getText(), addProflieFirstName.getText(),
                         addProflieMiddleName.getText(), addProfliePosition.getText(), addProflieAdress.getText(),
                         addProflieCitezenship.getText(), addProflieSkills.getText(), addProflieEducation.getText(),
-                        Integer.parseInt(addProfliePassport.getText()), addProflieExperience.getText(), addProflieOther.getText());
+                        addProfliePassport.getText(), addProflieExperience.getText(), addProflieOther.getText());
             }
             catch (Exception e)
             {
-                Alert a = new Alert(Alert.AlertType.WARNING);
+                Alert a = new Alert(Alert.AlertType.ERROR);
                 a.setTitle("Ошибка!");  //warning box title
-                a.setHeaderText("Проверьте валидность введенных данных");
+                a.setHeaderText("Поля пасспорта и телефона должны содержать только цифры");
                 a.showAndWait();
             }
         });

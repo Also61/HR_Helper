@@ -6,6 +6,8 @@ import java.sql.SQLException;
 public class Interviews {
 
     //Метод содержащий запрос на вставление данных в таблицу собеседований
+
+
     public static void addingInterview(Integer phone, String interMonth,
                                        String position, String result){
         String insert = "INSERT INTO " + Constant.INTERVIEWS_TABLE + "(" + Constant.INTERVIEWS_PHONE+ ","

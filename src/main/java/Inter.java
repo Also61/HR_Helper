@@ -1,14 +1,15 @@
+//Модель таблицы собеседований для вывода
 public class Inter {
     private int interviewID;
-    private int phone;
-    private String IntMonth;
+    private String phone;
+    private String InterMonth;
     private String position;
     private String result;
 
-    public Inter(int interviewID,int phone,String intMonth,String position,String result){
+    public Inter(int interviewID,String phone,String InterMonth,String position,String result){
         this.interviewID = interviewID;
         this.phone = phone;
-        this.IntMonth = intMonth;
+        this.InterMonth = InterMonth;
         this.position = position;
         this.result = result;
     }
@@ -19,11 +20,11 @@ public class Inter {
     public int getInterviewID() { return interviewID; }
     public void setInterviewID(int interviewID) { this.interviewID = interviewID; }
 
-    public int getPhone() { return phone; }
-    public void setPhone(int phone) { this.phone = phone; }
+    public String getPhone() { return phone; }
+    public void setPhone(String phone) { this.phone = phone; }
 
-    public String getIntMonth() {return IntMonth;}
-    public void setIntMonth(String IntMonth) { this.IntMonth = IntMonth; }
+    public String getInterMonth() {return InterMonth;}
+    public void setInterMonth(String InterMonth) { this.InterMonth = InterMonth; }
 
     public String getPosition() { return position; }
     public void setPosition(String position) { this.position = position; }

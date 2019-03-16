@@ -1,7 +1,7 @@
 //Модель таблицы анкет для вывода
 public class Prof {
 
-   private int phone;
+   private String phone;
     private String secondName;
     private String name;
     private  String middleName;
@@ -10,12 +10,12 @@ public class Prof {
     private  String citizenship;
     private  String skills;
     private   String education;
-    private   int passport;
+    private   String passport;
     private   String experience;
     private   String other;
 
-    public Prof(int phone, String secondName, String name, String middleName,String position,
-                String adress, String citizenship, String skills, String education, int passport,
+    public Prof(String phone, String secondName, String name, String middleName,String position,
+                String adress, String citizenship, String skills, String education, String passport,
                 String experience, String other) {
         this.phone = phone;
         this.secondName = secondName;
@@ -36,10 +36,10 @@ public class Prof {
 
 
 
-    public int getPhone(){
+    public String getPhone(){
     return phone;
     }
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -114,10 +114,10 @@ public class Prof {
     }
 
 
-    public int getPassport(){
+    public String getPassport(){
         return passport;
     }
-    public void setPassport(int passport) {
+    public void setPassport(String passport) {
         this.passport = passport;
     }
 

@@ -4,6 +4,6 @@ public class Configs {
     static String dbPort = "3306";
     static String dbUser = "root";
     static String dbPass = "root";
-    static String dbName = "crm";
+    static String dbName = "HR_helper";
 
 }

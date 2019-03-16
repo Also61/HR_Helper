@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -102,7 +103,7 @@ public class Controller {
     private TableColumn<Inter, String> intPosition;
 
     @FXML
-    private TableColumn<Inter, String> IntMonth;
+    private TableColumn<Inter, String> InterMonth;
 
     @FXML
     private ImageView LoadOrRefresh;
@@ -190,12 +191,14 @@ public class Controller {
 
             IntID.setCellValueFactory(new PropertyValueFactory<Inter, Integer>(Constant.INTERVIEWS_ID));
             intPhone.setCellValueFactory(new PropertyValueFactory<Inter, Integer>(Constant.INTERVIEWS_PHONE));
-            IntMonth.setCellValueFactory(new PropertyValueFactory<Inter, String>(Constant.INTERVIEWS_INTERMONTH));
+            InterMonth.setCellValueFactory(new PropertyValueFactory<Inter, String>("InterMonth"));
             intPosition.setCellValueFactory(new PropertyValueFactory<Inter, String>(Constant.INTERVIEWS_POSITION));
             intResult.setCellValueFactory(new PropertyValueFactory<Inter, String>(Constant.INTERVIEWS_RESULT));
 
             interviewTable.setItems(interviewsData); //Вывод из ObservableList в Tableview
         });
+
+
 
 
     }

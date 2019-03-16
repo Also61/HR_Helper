@@ -28,14 +28,13 @@ public class DataBaseHandler {
         try {
            Connection connection = DriverManager.getConnection(connectionString, Configs.dbUser, Configs.dbPass);
             Statement statement = connection.createStatement();
-            /* IDEA Ругается на эту строчку во время компиляции если использовать метод getDbConnection(),
-             из-за чего приходится обьявлять дополнительно статическое подключение к БД и использовать его */
+
             ResultSet resSetProf = statement.executeQuery(selectProfiles);
 
 
             while (resSetProf.next()) {
 
-                int Phone = resSetProf.getInt(Constant.INTERVIEWS_PHONE);
+                String Phone = resSetProf.getString(Constant.INTERVIEWS_PHONE);
                 String SecondName = resSetProf.getString(Constant.PROFILES_SECONDNAME);
                 String Name = resSetProf.getString(Constant.PROFILES_NAME);
                 String MiddleName = resSetProf.getString(Constant.PROFILES_MIDDLENAME);
@@ -44,7 +43,7 @@ public class DataBaseHandler {
                 String Citizenship = resSetProf.getString(Constant.PROFILES_CITIZENSHIP);
                 String Skills = resSetProf.getString(Constant.PROFILES_SKILLS);
                 String Education = resSetProf.getString(Constant.PROFILES_EDUCATION);
-                int Passport = resSetProf.getInt(Constant.PROFILES_PASSPORT);
+                String Passport = resSetProf.getString(Constant.PROFILES_PASSPORT);
                 String Experience = resSetProf.getString(Constant.PROFILES_EXPERIENCE);
                 String Other = resSetProf.getString(Constant.PROFILES_OTHER);
 
@@ -65,12 +64,12 @@ public class DataBaseHandler {
 
 
     public static void initDataInter() throws IOException, SQLException {
-        String selectInterviews = "SELECT * FROM " + Constant.INTERVIEWS_TABLE;
+        String selectInterviews = "SELECT " + Constant.INTERVIEWS_ID + "," + Constant.INTERVIEWS_PHONE + ","+ "InterMonth"+ ","
+         + Constant.INTERVIEWS_POSITION + ","+ Constant.INTERVIEWS_RESULT +  " FROM " + Constant.INTERVIEWS_TABLE;
         try {
            Connection connection = DriverManager.getConnection(connectionString, Configs.dbUser, Configs.dbPass);
             Statement statement = connection.createStatement();
-            /* IDEA Ругается на эту строчку во время компиляции если использовать метод getDbConnection(),
-             из-за чего приходится обьявлять дополнительно статическое подключение к БД и использовать его */
+
             ResultSet resSetInter = statement.executeQuery(selectInterviews);
 
 
@@ -78,8 +77,8 @@ public class DataBaseHandler {
 
             while (resSetInter.next()){
                 int interviewID = resSetInter.getInt(Constant.INTERVIEWS_ID);
-                int phone = resSetInter.getInt(Constant.INTERVIEWS_PHONE);
-                String intMonth = resSetInter.getString(Constant.INTERVIEWS_INTERMONTH);
+                String phone = resSetInter.getString("Phone");
+                String intMonth = resSetInter.getString("InterMonth");
                 String position = resSetInter.getString(Constant.INTERVIEWS_POSITION);
                 String result = resSetInter.getString(Constant.INTERVIEWS_RESULT);
 
