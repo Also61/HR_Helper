@@ -1,3 +1,5 @@
+package mediasoft.javacourse.coursework;
+
 //Переменные хранящие данные для подключения БД
 public class Configs {
     static String dbHost = "localhost";

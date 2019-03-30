@@ -1,13 +1,15 @@
+package mediasoft.javacourse.coursework;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import mediasoft.javacourse.coursework.DataBaseHandler;
+import mediasoft.javacourse.coursework.Profiles;
 
 
-import java.io.NotActiveException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class AddProfilePageController {

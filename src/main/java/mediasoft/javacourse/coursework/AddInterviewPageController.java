@@ -1,8 +1,12 @@
+package mediasoft.javacourse.coursework;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import mediasoft.javacourse.coursework.DataBaseHandler;
+import mediasoft.javacourse.coursework.Interviews;
 
 
 import java.net.URL;
@@ -59,7 +63,7 @@ public class AddInterviewPageController {
                         //Загрузка в БД данных анкеты
 
 
-                        Interviews.addingInterview(Integer.parseInt(addInterPhone.getText()), addInterInterDate.getText(),
+                        Interviews.addingInterview(addInterPhone.getText(), addInterInterDate.getText(),
                                 addInterPosition.getText(), addInterInterResult.getText());
                     } catch (Exception e) {
 

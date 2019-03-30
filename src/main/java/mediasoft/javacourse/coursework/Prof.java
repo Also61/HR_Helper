@@ -1,3 +1,5 @@
+package mediasoft.javacourse.coursework;
+
 //Модель таблицы анкет для вывода
 public class Prof {
 

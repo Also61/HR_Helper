@@ -1,3 +1,5 @@
+package mediasoft.javacourse.coursework;
+
 public class Constant {
 
     //Константы хранящие информацию о таблице анкет
@@ -25,6 +27,14 @@ public class Constant {
     public static final String INTERVIEWS_INTERMONTH = "InterMonth" ;
     public static final String INTERVIEWS_POSITION = "Position" ;
     public static final String INTERVIEWS_RESULT = "Result" ;
+
+    // Константы хранящие информацию о таблице нанятых сотрудников
+    public static final String STATE_TABLE = "state";
+
+    public static final String STATE_PHONE = "Phone";
+    public static final String STATE_FIO = "FIO";
+    public static final String STATE_POSITION = "Position";
+    public static final String STATE_OKLAD = "Oklad";
 
 
 

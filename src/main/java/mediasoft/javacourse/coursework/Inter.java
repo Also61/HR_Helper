@@ -1,3 +1,5 @@
+package mediasoft.javacourse.coursework;
+
 //Модель таблицы собеседований для вывода
 public class Inter {
     private int interviewID;
